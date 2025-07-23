@@ -14,24 +14,41 @@ import fileUpload from "express-fileupload";
 import morgan from "morgan";
 
 // Routes
-import { inventoriesRoutes, productsRoutes, usersRoutes } from "./routes/index";
+import {
+  inventoriesRoutes,
+  invoicesRoutes,
+  productsRoutes,
+  usersRoutes,
+} from "./routes/index";
 import { generateErrorUtil } from "./utils";
 import type { CustomError } from "./utils/generateErrorUtil";
 
 // ------------------------------------------
 // Generating the server
 const app = express();
-
-app.use(cors()); // Prevents connection problems between client and server
-app.use(morgan("dev")); // Query info on the console
-app.use(express.json()); // Parses JSON body
 app.use(fileUpload()); // Parses "form-data" body (for files)
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  }),
+);
+app.use(morgan("dev")); // Query info on the console
+app.use((req, res, next) => {
+  if (req.is("application/json")) {
+    express.json()(req, res, next);
+  } else {
+    next();
+  }
+});
 
 if (!UPLOADS_DIR) throw generateErrorUtil("Missing upload directory path");
 app.use(express.static(UPLOADS_DIR));
 
 // Middlewares which tell express where the routes are located
 app.use("/api/users", usersRoutes);
+app.use("/api/invoices", invoicesRoutes);
 app.use("/api/inventories", inventoriesRoutes);
 app.use("/api/products", productsRoutes);
 
