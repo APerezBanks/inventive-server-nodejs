@@ -48,6 +48,9 @@ importers:
       '@biomejs/biome':
         specifier: ^1.9.4
         version: 1.9.4
+      '@biomejs/cli-darwin-x64':
+        specifier: ^2.0.6
+        version: 2.0.6
       '@types/bcrypt':
         specifier: ^5.0.2
         version: 5.0.2
@@ -100,6 +103,12 @@ packages:
 
   '@biomejs/cli-darwin-x64@1.9.4':
     resolution: {integrity: sha512-ngYBh/+bEedqkSevPVhLP4QfVPCpb+4BBe2p7Xs32dBgs7rh9nY2AIYUL6BgLw1JVXV8GlpKmb/hNiuIxfPfZg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@biomejs/cli-darwin-x64@2.0.6':
+    resolution: {integrity: sha512-wJjjP4E7bO4WJmiQaLnsdXMa516dbtC6542qeRkyJg0MqMXP0fvs4gdsHhZ7p9XWTAmGIjZHFKXdsjBvKGIJJQ==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [darwin]
@@ -1069,6 +1078,8 @@ snapshots:
 
   '@biomejs/cli-darwin-x64@1.9.4':
     optional: true
+
+  '@biomejs/cli-darwin-x64@2.0.6': {}
 
   '@biomejs/cli-linux-arm64-musl@1.9.4':
     optional: true

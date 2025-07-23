@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@biomejs/cli-darwin-x64": "^2.0.6",
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
