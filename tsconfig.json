@@ -1,27 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "commonjs",
+    "target": "ES2017", // Permite usar async/await
+    "module": "commonjs", // Compatible con Node y nodemon
     "moduleResolution": "node",
-    "outDir": "dist",
+    "outDir": "dist", // Carpeta de salida compilada
     "rootDir": "src",
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/types"
-    ],
+    "typeRoots": ["./node_modules/@types", "./src/types"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
     "allowJs": true,
     "checkJs": false,
-    "noEmit": true
+    "noEmit": false // Permitirá compilar a JS
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
