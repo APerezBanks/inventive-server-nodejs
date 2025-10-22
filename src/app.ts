@@ -63,10 +63,10 @@ async function startServer() {
   // ------------------------------
   // Routes
   // ------------------------------
-  app.use("/api/users", usersRoutes);
-  app.use("/api/invoices", invoicesRoutes);
-  app.use("/api/inventories", inventoriesRoutes);
-  app.use("/api/products", productsRoutes);
+  app.use("/users", usersRoutes);
+  app.use("/invoices", invoicesRoutes);
+  app.use("/inventories", inventoriesRoutes);
+  app.use("/products", productsRoutes);
 
   // ------------------------------
   // Error-handling middleware
